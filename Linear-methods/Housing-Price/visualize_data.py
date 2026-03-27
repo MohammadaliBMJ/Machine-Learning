@@ -11,7 +11,10 @@ def import_data() -> pd.DataFrame:
     Returns:
         df (pd.DataFrame): Data stored in table called raw_data_housing.
     """
-    conn = psycopg2.connect(dsn = "host=172.20.160.1 port=5432 dbname=Housing_Price user=postgres password=1234512345")
+    conn = psycopg2.connect(dsn = "host='host name' port='port' " \
+    "dbname=Housing_Price " \
+    "user=postgres " \
+    "password='password'")
     df = pd.read_sql(sql = "SELECT * FROM raw_data_housing", con = conn)
     conn.close()
     return df

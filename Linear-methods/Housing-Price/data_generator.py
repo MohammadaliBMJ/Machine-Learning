@@ -113,7 +113,10 @@ if __name__ == "__main__":
     df = data_generator(size = 100000, rng = np.random.default_rng(10))
     print("Data Generation Complete.")
 
-    connection_string = "host=172.20.160.1 port=5432 dbname=Housing_Price user=postgres password=1234512345"
+    connection_string = "host='host name' port='port' " \
+    "dbname=Housing_Price " \
+    "user=postgres " \
+    "password='password'"
 
     print("Inserting Data into PostgreSQL")
     insert_into_database(df, connection_string)
