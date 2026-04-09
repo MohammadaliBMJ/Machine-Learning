@@ -1,6 +1,9 @@
 # Support Vector Machines
 This project implements an SVM model to predict diabetes using the `diabetes.csv` dataset. It includes data preprocessing, standardization, model tuning and grid search.
 ## Dataset
+This project uses Pima Indians Diabetes Database. Download it from the link below and place it in the same folder as the `SVM.ipynb` notebook:
+[Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+
 The original dataset has 768 rows or samples and 9 columns including 8 features and 1 outcome. The target variable is an int variable indicating the result with 0 and 1.
 ## Preprocessing
 For dealing with `Null` values in this dataset we use `KNNImputer` from the `sklearn` library. It fills out the missing values using the nearest or closest rows. We add two separate columns to the dataset which indicate which rows have null values for the columns `SkinThickness` and `BMI`. Then for dealing with outliers we remove them using Tukey’s 1.5×IQR rule by calculating first and third Quartiles. At the end we standardize the data so each feature contributes the same to the model.
